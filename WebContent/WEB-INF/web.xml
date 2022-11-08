@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>RoyalTourandTravelsProject</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>LoginServlet</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.controller.LoginServlet</servlet-class>
+    <init-param>
+      <param-name>email</param-name>
+      <param-value>admin@gmail.com</param-value>
+    </init-param>
+    <init-param>
+      <param-name>password</param-name>
+      <param-value>admin123</param-value>
+    </init-param>
+  </servlet>
+  <filter>
+    <filter-name>loginauthenticationfilter</filter-name>
+    <filter-class>com.filter.loginauthenticationfilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>loginauthenticationfilter</filter-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>Packageformfilter</filter-name>
+    <filter-class>com.filter.Packageformfilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>Packageformfilter</filter-name>
+    <url-pattern>/PackageController</url-pattern>
+  </filter-mapping>
+  <jsp-config>
+    <taglib>
+      <taglib-uri>www.royaltourandtravles.com/tourists/elfunction</taglib-uri>
+      <taglib-location>/WEB-INF/elfunction.tld</taglib-location>
+    </taglib>
+  </jsp-config>
+</web-app>
